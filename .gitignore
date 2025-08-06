@@ -1,0 +1,19 @@
+# Python venv
+.venv/
+venv/
+__pycache__/
+
+# macOS junk
+.DS_Store
+
+# Environment files
+.env
+
+# Compiled files
+*.pyc
+
+# Logs
+*.log
+
+# Stage uploads & temp
+/tmp/
