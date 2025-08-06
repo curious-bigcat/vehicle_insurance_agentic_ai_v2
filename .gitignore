@@ -1,19 +1,24 @@
-# Python venv
-.venv/
-venv/
+# Python
 __pycache__/
-
-# macOS junk
-.DS_Store
-
-# Environment files
-.env
-
-# Compiled files
 *.pyc
-
-# Logs
+*.pyo
+*.pyd
+*.sqlite3
 *.log
 
-# Stage uploads & temp
-/tmp/
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment & credentials
+.env
+*.key
+*.pem
+
+# IDE / editor configs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store

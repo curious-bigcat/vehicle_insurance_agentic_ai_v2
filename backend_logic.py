@@ -15,10 +15,18 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Constants (configurable via environment variables)
-TABLE_NAME = os.getenv("DRIVERS_LICENSE_TABLE", "VEHICLE_DB.PUBLIC.DRIVERS_LICENSE_DETAILS")
-STAGE_NAME = os.getenv("SNOWFLAKE_STAGE", "@doc_ai_stage")
-LOCAL_PATH = os.getenv("LOCAL_TMP_PATH", "/tmp")
+# Configuration: Set these in your .env file (do not commit .env to version control)
+# Example .env entries:
+
+TABLE_NAME = os.getenv("DRIVERS_LICENSE_TABLE")
+if not TABLE_NAME:
+    raise RuntimeError("DRIVERS_LICENSE_TABLE environment variable is not set. Please set it in your .env file.")
+STAGE_NAME = os.getenv("SNOWFLAKE_STAGE")
+if not STAGE_NAME:
+    raise RuntimeError("SNOWFLAKE_STAGE environment variable is not set. Please set it in your .env file.")
+LOCAL_PATH = os.getenv("LOCAL_TMP_PATH")
+if not LOCAL_PATH:
+    raise RuntimeError("LOCAL_TMP_PATH environment variable is not set. Please set it in your .env file.")
 
 # Load Snowflake credentials
 conn = {
